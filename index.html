@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LærQuest Pro</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>LærQuest Pro</h1>
+      <div class="player-row">
+        <input id="playerName" placeholder="Dit spillernavn" maxlength="30" />
+        <button id="savePlayer">Gem profil</button>
+      </div>
+      <div class="stats">
+        <span>XP: <strong id="xp">0</strong></span>
+        <span>Level: <strong id="level">1</strong></span>
+        <span>Streak: <strong id="streak">0</strong></span>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section>
+        <h2>Fagbaner</h2>
+        <div id="subjects" class="subjects"></div>
+      </section>
+
+      <aside class="panel">
+        <h3>Top spillere</h3>
+        <ol id="leaderboard"></ol>
+      </aside>
+    </main>
+
+    <section class="panel hidden" id="gameSection">
+      <div class="game-head">
+        <button id="closeGame" class="secondary">Tilbage</button>
+        <h2 id="gameTitle"></h2>
+      </div>
+      <iframe id="lessonVideo" src="" title="Læringsvideo" allowfullscreen></iframe>
+      <div class="quiz" id="quiz"></div>
+      <button id="nextQuestion">Næste mission</button>
+      <p id="feedback"></p>
+    </section>
+
+    <template id="subjectTemplate">
+      <article class="card">
+        <h3></h3>
+        <p class="desc"></p>
+        <button>Start</button>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
