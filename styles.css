@@ -1,0 +1,48 @@
+:root {
+  --bg: #0b1020;
+  --panel: #121a32;
+  --line: #26355e;
+  --text: #eaf0ff;
+  --muted: #b7c3e6;
+  --accent: #5fb3ff;
+  --ok: #43d17a;
+  --bad: #ff6a7a;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, #17264f, var(--bg) 55%);
+}
+.topbar {
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--line);
+  background: rgba(11,16,32,.8);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(6px);
+}
+.topbar h1 { margin: 0 0 .8rem; }
+.player-row { display: flex; gap: .6rem; margin-bottom: .7rem; }
+input, button { border-radius: 10px; border: 1px solid var(--line); }
+input { background: #0c1633; color: var(--text); padding: .65rem .8rem; }
+button { background: var(--accent); color: #031026; border: 0; padding: .65rem .9rem; font-weight: 700; cursor: pointer; }
+button.secondary { background: #26355e; color: var(--text); }
+.stats { display: flex; gap: 1rem; color: var(--muted); }
+.layout { max-width: 1100px; margin: 1.2rem auto; padding: 0 1rem; display: grid; grid-template-columns: 1fr 300px; gap: 1rem; }
+.subjects { display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 1rem; }
+.card, .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 1rem; }
+.card h3 { margin-top: 0; }
+.desc { color: var(--muted); min-height: 2.8rem; }
+#gameSection { max-width: 1100px; margin: 1rem auto 2rem; }
+.game-head { display: flex; align-items: center; gap: .8rem; }
+#lessonVideo { width: 100%; aspect-ratio: 16/9; border: 0; border-radius: 12px; margin: .8rem 0; }
+.quiz { background: #0c1633; border: 1px solid var(--line); border-radius: 12px; padding: 1rem; margin-bottom: .8rem; }
+.quiz-options { display: grid; gap: .55rem; margin-top: .65rem; }
+.quiz-options button { background: #1a2650; color: var(--text); text-align: left; }
+.quiz-options button.correct { background: var(--ok); color: #04170d; }
+.quiz-options button.wrong { background: var(--bad); color: #fff; }
+.hidden { display: none; }
+@media (max-width: 900px){ .layout{ grid-template-columns: 1fr; } }
